@@ -1,0 +1,30 @@
+nav.navbar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    width: auto;
+    padding: 10px;
+    font-size: 1.1em;
+}
+nav.navbar ul {
+    display: flex;
+    flex-direction: row;
+}
+nav.navbar li { 
+    list-style-type: none;
+    margin: 0 20px;
+}
+nav.navbar a {
+    text-decoration: none;
+}
+@media only screen and (max-width: 600px) {
+    nav.navbar {
+        flex-direction: column;
+    }
+    nav.navbar ul {
+        flex-direction: column;
+    }
+}

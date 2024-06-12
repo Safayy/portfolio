@@ -1,0 +1,33 @@
+.padding-30 {
+    margin: 30px;
+    max-width: 40%;
+}
+.socials {
+    display: inline-block;
+    vertical-align: middle;
+}
+.icon {
+    width: 30px;
+    aspect-ratio: 1;
+    height: auto;
+    padding: 5px;
+    color: var(--blue);
+}
+div#introduction h1 {
+    font-size: 4em;
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+div#introduction h3 {
+    color: var(--lightgray);
+    font-size: 2em;
+}
+div#skills ul {
+    padding: 10px;
+}
+@media only screen and (max-width: 600px) {
+    div#skills ul, .padding-30 {
+        max-width: max-content;
+    }
+}

@@ -1,0 +1,27 @@
+.cards-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.card-project {
+    width: 400px;
+}
+.card-project button {
+    float: right;
+    margin-right: 10px;
+}
+.card-project video {
+    margin-top: 10px;
+    width: 100%;
+}
+@media only screen and (max-width: 600px) {
+    .cards-container {
+        flex-direction: column;
+        display: block;
+    }
+    .cards-project {
+        width: 100%;
+    }
+}

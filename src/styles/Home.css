@@ -1,5 +1,7 @@
-.padding-30 {
-    margin: 30px;
+.home {
+    height: 80vh;
+}
+.content {
     max-width: 40%;
 }
 .socials {
@@ -25,9 +27,15 @@ div#introduction h3 {
 }
 div#skills ul {
     padding: 10px;
+    max-width: 300px;
+}
+@media only screen and (max-width: 900px) {
+    .content {
+        max-width: 70%;
+    }
 }
 @media only screen and (max-width: 600px) {
-    div#skills ul, .padding-30 {
+    div#skills ul, .content {
         max-width: max-content;
     }
 }

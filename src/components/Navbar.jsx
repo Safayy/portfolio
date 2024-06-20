@@ -1,18 +1,26 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import '../styles/Navbar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
+    const [isMenuVisible, setIsMenuVisible] = useState(false)
     const navigate = useNavigate()
-
-    return ( 
+    const toggleShowNav = () => {
+        setIsMenuVisible(!isMenuVisible);
+    }
+    return (
         <nav className='navbar'>
+            <FontAwesomeIcon onClick={toggleShowNav} id="navbtn" icon={faBars} className="icon" />
             <h2>Safa Yousif</h2>
-            <ul>
+            <ul className={!isMenuVisible && 'hide'}>
                 <li><a onClick={() => navigate('/')}>Who Am I</a></li>
                 <li><a onClick={() => navigate('/projects')}>Projects</a></li>
                 <li><a onClick={() => navigate('/blog')}>Blog</a></li>
+                <li><a href="/resume-safa-yousif.pdf">Resume</a></li>
             </ul>
-            <span className='bold'>Contact Me</span>
+            <span className={`bold ${!isMenuVisible && 'hide'}`}>Contact Me</span>
         </nav>
      );
 }

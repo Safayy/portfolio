@@ -20,11 +20,23 @@ nav.navbar li {
 nav.navbar a {
     text-decoration: none;
 }
+#navbtn {
+    display: none;
+}
 @media only screen and (max-width: 600px) {
-    nav.navbar {
-        flex-direction: column;
+    #navbtn {
+        display: block;
+    }
+    .navbar h2 {
+        display: none;
     }
     nav.navbar ul {
         flex-direction: column;
+        align-items:start;
+        align-content: center;
+        justify-content: space-between;
+    }
+    nav.navbar ul.hide, nav.navbar span.hide {
+        display: none;
     }
 }

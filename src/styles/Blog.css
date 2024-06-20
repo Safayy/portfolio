@@ -1,0 +1,30 @@
+.blogs-container {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.blog-card {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    gap: 20px;
+}
+.blog-card img {
+    height: 100%;
+}
+.blog-card span {
+    float: right;
+    z-index: 3;
+}
+@media only screen and (max-width: 900px) {
+    .blogs-container {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .blog-card img {
+        display: none;
+    }
+}

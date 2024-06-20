@@ -1,0 +1,49 @@
+.accent {
+    z-index: -1;
+    height: 100%;
+    width: 55%;
+    background-color: var(--lightgreen);
+    border-radius: 50% 0 0 50%;
+    behavior: url(PIE.htc);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+}
+@media only screen and (max-width: 900px) {
+    .accent {
+        opacity: 0.3;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .accent {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        border-radius: 10%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        opacity: 1;
+    }
+}
+.card-preview {
+    background-color: #626472;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 20px;
+    margin: 5px;
+}
+.card-preview h3, .card-preview p {
+    color: white;
+}
+.card-preview h3 {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+.card-preview p {
+    font-weight: 100;
+}
+.active_preview {
+    background-color: var(--blue);
+}

@@ -12,10 +12,11 @@ const Projects = () => {
                         <h2>{project.name}</h2>
                         <p>{project.description}</p>
                         <span>{project.tags.join(', ')}</span>
-                        <button className='button background-blue' href={project.live_demo}>Live Demo</button>
-                        <button className='button' href={project.source_code}>Source Code</button>
-                        <video controls poster='image' preload='true'>
-                            <source src={'/linkedinbannermaker.mp4'} type="video/mp4"/>
+                        { project.release_link && <button className='button background-blue' target="_blank" href={project.release_link}>Release</button> }
+                        { project.live_demo && <button className='button background-blue' target="_blank" href={project.live_demo}>Live Demo</button> }
+                        { project.source_code && <button className='button' target="_blank" href={project.source_code}>Source Code</button> }
+                        <video className='fixed-height' controls poster='image' preload='true'>
+                            <source src={  '/' + project.demo_video } type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
                     </div>

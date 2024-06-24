@@ -34,20 +34,18 @@ const Preview = () => {
         <>
         <div className='padding-30'>
             <h2>Check out my Projects</h2>
-            {preview_projects.map((project) => 
-                <div key={project.key} className={'card-preview ' + (project.key == index ? 'active_preview' : '') }>
-                    <h3>{project.name}</h3>
-                    <p>{project.short_description}</p>
-                    {/* <button className='button'>See More Details</button> */}
-                </div>
-            )}
-            <div className='slideshow_nav'>
-                1 2 3
+            <div className="card-previews">
+                {preview_projects.map((project) => 
+                    <div key={project.key} className={'card-preview ' + (project.key == index ? 'active_preview' : '') }>
+                        <h3>{project.name}</h3>
+                        <p>{project.short_description}</p>
+                    </div>
+                )}
             </div>
         </div>
         <div className='accent'>
             <video poster='image' key={index} preload='true' autoPlay muted> {/* Preview videos should be of dimension 795 x 1080 */}
-                <source src={'/'+preview_projects[index].video} type="video/mp4"/>
+                <source src={'/'+preview_projects[index].preview_video} type="video/mp4"/>
                 {/* <source src={'/linkedinbannermaker.mp4'} type="video/mp4"/> */}
                 {/* <source src="where the video is" type="video/mp4" />
                 <source src="where the video is" type="video/oog" /> */}

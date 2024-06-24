@@ -11,28 +11,18 @@
     top: 0;
     overflow: hidden;
 }
-@media only screen and (max-width: 900px) {
-    .accent {
-        opacity: 0.3;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .accent {
-        position: relative;
-        width: 90%;
-        height: 100%;
-        border-radius: 10%;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        opacity: 1;
-    }
+.card-previews {
+    display: flex;
+    overflow-y: auto;
 }
 .card-preview {
-    background-color: #626472;
+    background-color: #556884;
     border-radius: 10px;
     width: fit-content;
     padding: 20px;
     margin: 5px;
+    overflow: hidden;
+    opacity: 0.6;
 }
 .card-preview h3, .card-preview p {
     color: white;
@@ -46,4 +36,27 @@
 }
 .active_preview {
     background-color: var(--blue);
+    opacity: 1;
+}
+@media only screen and (max-width: 600px) {
+    .accent {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        border-radius: 10%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        opacity: 1;
+    }
+    .card-previews {
+        flex-direction: column;
+    }
+    .card-preview {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .accent {
+        opacity: 0.3;
+    }
 }

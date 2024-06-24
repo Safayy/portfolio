@@ -14,12 +14,12 @@ const Home = () => {
                     <p>Hello, I am</p>
                     <h1>Safa Yousif</h1>
                     <div className="socials">
-                        <FontAwesomeIcon icon={faGithub} className="icon" />
-                        <FontAwesomeIcon icon={faLinkedin} className="icon"/>
-                        <FontAwesomeIcon icon={faEnvelope} className="icon"/>
+                        <a target='_blank' href='https://github.com/Safayy'><FontAwesomeIcon icon={faGithub} className="icon" /></a>
+                        <a target='_blank' href='https://www.linkedin.com/in/safa-yousif/'><FontAwesomeIcon icon={faLinkedin} className="icon"/></a>
+                        <a target='_blank' href='mailto://safa.yousif@outlook.com'><FontAwesomeIcon icon={faEnvelope} className="icon"/></a>
                     </div>
                     <h3>Fresh Graduate & Software Developer</h3>
-                    <p>As a final year student deeply  passionate about Full Stack Development, my focus lies in mastering  React.js and Node.js. I thrive on exploring diverse technologies and  bringing innovative projects to life. I take.</p>
+                    <p>Fresh Graduate of Software Engineering, with a passion for Full Stack website development and a deep understanding in React.js and Node.js. This year I worked on a mobile application for translating sign language, it was really enjoyable. I thrive on exploring diverse technologies and  bringing innovative projects to life.</p>
                 </div>
                 <div id="skills">
                     <span>What I Do</span>

@@ -51,16 +51,16 @@ const Preview = () => {
                             <source src={'/'+project.preview_video} type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
-                        <video className='background' poster='image' preload='true' autoPlay muted loop>
+                        <video className='video-preview background' poster='image' preload='true' autoPlay muted loop>
                             <source src={'/'+project.preview_video} type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
                     </div>
                 )}
         </div>
-            {/* <div className="flex">
+            <div className="flex">
                 <button className='button bold col-orange margin-btm'>See More Projects!</button>
-            </div> */}
+            </div>
         </>
 );
 }

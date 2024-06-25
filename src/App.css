@@ -35,14 +35,20 @@
     margin: 5px;
     padding: 15px;
 }
-.margin-btm {
-  margin: 60px auto;
-}
 .col-orange {
   background-color: orangered;
   color: white;
   text-align: center;
 }
-.flex {
-  display: flex;
+.center {
+  width: max-content;
+  margin: 60px auto;
+}
+.mobile-only {
+  display: block;
+}
+@media only screen and (min-width: 900px) {
+  .mobile-only {
+    display: none;
+  }
 }

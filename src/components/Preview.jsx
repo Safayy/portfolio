@@ -1,8 +1,10 @@
 import { useEffect, useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../styles/Preview.css'
 import projects from '../assets/projects.json'
 
 const Preview = () => {
+    const navigate = useNavigate()
     const [index, setIndex] = useState(0)
     let i = 0;
     const preview_projects = projects.filter(project => project.isPreview === true)
@@ -58,9 +60,8 @@ const Preview = () => {
                     </div>
                 )}
         </div>
-            <div className="flex">
-                <button className='button bold col-orange margin-btm'>See More Projects!</button>
-            </div>
+        <button onClick={() => navigate('/projects')}
+        className='center mobile-only button bold col-orange'>See More Projects!</button>
         </>
 );
 }

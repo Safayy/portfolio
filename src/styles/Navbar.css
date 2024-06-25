@@ -36,7 +36,7 @@ nav.navbar a {
         align-content: center;
         justify-content: space-between;
     }
-    nav.navbar ul.hide, nav.navbar span.hide {
+    nav.navbar ul.hide, nav.navbar a.hide {
         display: none;
     }
 }

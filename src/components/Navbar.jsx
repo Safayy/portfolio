@@ -20,9 +20,9 @@ const Navbar = () => {
                 <li><a onClick={() => navigate('/blog')}>Blog</a></li>
                 <li><a href="/resume-safa-yousif.pdf">Resume</a></li>
             </ul>
-            <span className={`bold ${!isMenuVisible && 'hide'}`}>Contact Me</span>
+            <a className={`bold ${!isMenuVisible && 'hide'}`} href='mailto:safa.yousif@outlook.com'>Contact Me</a>
         </nav>
-     );
+     );s
 }
  
 export default Navbar;

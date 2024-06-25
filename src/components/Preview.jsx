@@ -44,14 +44,23 @@ const Preview = () => {
             </div>
         </div>
         <div className='accent'>
-            <video poster='image' key={index} preload='true' autoPlay muted> {/* Preview videos should be of dimension 795 x 1080 */}
-                <source src={'/'+preview_projects[index].preview_video} type="video/mp4"/>
-                {/* <source src={'/linkedinbannermaker.mp4'} type="video/mp4"/> */}
-                {/* <source src="where the video is" type="video/mp4" />
-                <source src="where the video is" type="video/oog" /> */}
-                Your browser does not support the video tag.
-            </video>
+                {preview_projects.map((project) =>
+                    <div className={'video-container ' + (project.key == index ? 'display' : '')} key={project.key}>
+                        {/* Preview videos should be of dimension 795 x 1080 */}
+                        <video poster='image' preload='true' autoPlay muted loop> 
+                            <source src={'/'+project.preview_video} type="video/mp4"/>
+                            Your browser does not support the video tag.
+                        </video>
+                        <video className='background' poster='image' preload='true' autoPlay muted loop>
+                            <source src={'/'+project.preview_video} type="video/mp4"/>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                )}
         </div>
+            {/* <div className="flex">
+                <button className='button bold col-orange margin-btm'>See More Projects!</button>
+            </div> */}
         </>
 );
 }

@@ -8,7 +8,7 @@ const Home = () => {
     const skills = ['Git', 'ReactJS', 'Android Studio', 'Java', 'PHP', 'HTML', 'CSS', 'Python', 'JavaScript', 'Docker', 'JUnit'];
 
     return ( 
-        <div className='home'>
+        <div className='home relative'>
             <div className='padding-30 content'>
                 <div id="introduction">
                     <p>Hello, I am</p>

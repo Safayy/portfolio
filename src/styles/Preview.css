@@ -2,14 +2,42 @@
     z-index: -1;
     height: 100%;
     width: 55%;
-    background-color: var(--lightgreen);
-    border-radius: 50% 0 0 50%;
+    border-radius: 90% 0 0% 0%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     behavior: url(PIE.htc);
+    position: absolute;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    /* background-color: var(--lightgreen); */
+    overflow: hidden;
+    opacity: 1;
+}
+.video-container {
+    z-index: -1;
+    display:none;
+    height: 100%;
+    width: 100%;
+}
+.video-container.display {
+    display:block;
+}
+.video-container video.background {
+    z-index: -2;
+    object-fit: cover;
+    filter: blur(10px);
+    height: 100%;
+    width: 100%;
     position: absolute;
     bottom: 0;
     right: 0;
     top: 0;
-    overflow: hidden;
+}
+.video-container video {
+    z-index: -3;
+    height: 100%;
+    width: 100%;
 }
 .card-previews {
     display: flex;
@@ -38,6 +66,11 @@
     background-color: var(--blue);
     opacity: 1;
 }
+@media only screen and (max-width: 900px) {
+    .accent {
+        opacity: 0.3;
+    }
+}
 @media only screen and (max-width: 600px) {
     .accent {
         position: relative;
@@ -53,10 +86,5 @@
     }
     .card-preview {
         width: 80%;
-    }
-}
-@media only screen and (max-width: 900px) {
-    .accent {
-        opacity: 0.3;
     }
 }

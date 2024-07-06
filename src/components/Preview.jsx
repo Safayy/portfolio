@@ -6,7 +6,9 @@ import projects from '../assets/projects.json'
 const Preview = () => {
     const navigate = useNavigate()
     const [index, setIndex] = useState(0)
-    let i = 0;
+    const [isLoading, setIsLoading] = useState(true)
+    let loadedVideos = 0;
+    // let i = 0;
     const preview_projects = projects.filter(project => project.isPreview === true)
     .map((project, i) => ({
         ...project,
@@ -31,6 +33,13 @@ const Preview = () => {
             console.log("Interval cleared");
         };
     }, []);
+    
+    function handleVideoLoad() {
+        loadedVideos++
+        if(loadedVideos > projects.length)
+            setIsLoading(false)
+        console.log('Vid')
+    }
 
     return (
         <>
@@ -46,14 +55,18 @@ const Preview = () => {
             </div>
         </div>
         <div className='accent'>
+                {isLoading ? <p className='center'>Loading...</p> : ''}
                 {preview_projects.map((project) =>
-                    <div className={'video-container ' + (project.key == index ? 'display' : '')} key={project.key}>
+                    <div className={'video-container ' 
+                    + (isLoading  ? ' ' : (project.key == index ? 'display ' : ' '))}
+                    key={project.key}>
                         {/* Preview videos should be of dimension 795 x 1080 */}
-                        <video poster='image' preload='true' autoPlay muted loop> 
+                        <video onLoadedData={handleVideoLoad} poster='image' preload='auto' autoPlay muted loop> 
                             <source src={'/'+project.preview_video} type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
-                        <video className='video-preview background' poster='image' preload='true' autoPlay muted loop>
+                        <video onLoadedData={handleVideoLoad} poster='image' preload='auto' autoPlay muted loop
+                        className={'video-preview background'}>
                             <source src={'/'+project.preview_video} type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>

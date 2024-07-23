@@ -40,14 +40,6 @@ const Preview = () => {
             console.log("Loaded video " + (prevLoadedVideos+1))
             return prevLoadedVideos + 1
         })
-        // loadedVideos++
-        // // console.log(projects.length)
-        // if(loadedVideos > ((projects.length * 2) -1)){
-        //     setIsLoading(false)
-        //     console.log(loadedVideos)
-        //     console.log("Displaying slideshow")
-        // }
-        // console.log('Vid')
     }
 
     return (

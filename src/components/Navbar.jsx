@@ -18,11 +18,11 @@ const Navbar = () => {
                 <li><a onClick={() => navigate('/')}>Who Am I</a></li>
                 <li><a onClick={() => navigate('/projects')}>Projects</a></li>
                 <li><a onClick={() => navigate('/blog')}>Blog</a></li>
-                <li><a href="/resume-safa-yousif.pdf">Resume</a></li>
+                <li><a href="/SafaYousif_Resume.pdf">Resume</a></li>
             </ul>
             <a className={`bold ${!isMenuVisible && 'hide'}`} href='mailto:safa.yousif@outlook.com'>Contact Me</a>
         </nav>
-     );s
+     );
 }
  
 export default Navbar;

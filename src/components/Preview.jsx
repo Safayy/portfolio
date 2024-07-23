@@ -7,8 +7,7 @@ const Preview = () => {
     const navigate = useNavigate()
     const [index, setIndex] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
-    let loadedVideos = 0;
-    // let i = 0;
+    const [loadedVideos, setLoadedVideos] = useState(0)
     const preview_projects = projects.filter(project => project.isPreview === true)
     .map((project, i) => ({
         ...project,
@@ -17,7 +16,6 @@ const Preview = () => {
     const intervalIDRef = useRef(null);
 
     useEffect(() => {
-        console.log("Use Effect")
             const id = setInterval(() => {
                 setIndex( prevIndex => {
                     if (prevIndex < preview_projects.length - 1)
@@ -35,10 +33,21 @@ const Preview = () => {
     }, []);
     
     function handleVideoLoad() {
-        loadedVideos++
-        if(loadedVideos > projects.length)
-            setIsLoading(false)
-        console.log('Vid')
+        setLoadedVideos( (prevLoadedVideos)=> {
+            if (prevLoadedVideos + 1 > ((projects.length * 2) -1 )){
+                setIsLoading(false)
+            }
+            console.log("Loaded video " + (prevLoadedVideos+1))
+            return prevLoadedVideos + 1
+        })
+        // loadedVideos++
+        // // console.log(projects.length)
+        // if(loadedVideos > ((projects.length * 2) -1)){
+        //     setIsLoading(false)
+        //     console.log(loadedVideos)
+        //     console.log("Displaying slideshow")
+        // }
+        // console.log('Vid')
     }
 
     return (
@@ -61,11 +70,11 @@ const Preview = () => {
                     + (isLoading  ? ' ' : (project.key == index ? 'display ' : ' '))}
                     key={project.key}>
                         {/* Preview videos should be of dimension 795 x 1080 */}
-                        <video onLoadedData={handleVideoLoad} poster='image' preload='auto' autoPlay muted loop> 
+                        <video onLoadedData={handleVideoLoad} preload='auto' autoPlay muted loop> 
                             <source src={'/'+project.preview_video} type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
-                        <video onLoadedData={handleVideoLoad} poster='image' preload='auto' autoPlay muted loop
+                        <video onLoadedData={handleVideoLoad} preload='auto' autoPlay muted loop
                         className={'video-preview background'}>
                             <source src={'/'+project.preview_video} type="video/mp4"/>
                             Your browser does not support the video tag.
